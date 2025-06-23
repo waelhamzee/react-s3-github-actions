@@ -1,12 +1,44 @@
-# React + Vite
+# React S3 GitHub Actions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project demonstrates how to automate the deployment of a React application to AWS S3 using GitHub Actions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React application setup
+- Continuous Integration and Deployment (CI/CD) with GitHub Actions
+- Automatic build and deployment to AWS S3
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Node.js and npm installed
+- AWS account with S3 bucket configured
+- GitHub repository
+
+## Getting Started
+
+1. **Clone the repository:**
+  ```bash
+  git clone https://github.com/your-username/react-s3-github-actions.git
+  cd react-s3-github-actions
+  ```
+
+2. **Install dependencies:**
+  ```bash
+  npm install
+  ```
+
+3. **Configure AWS credentials:**
+  - Store your AWS credentials as GitHub repository secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `AWS_REGION`.
+  - Set your S3 bucket name as a secret: `S3_BUCKET_NAME`.
+
+4. **GitHub Actions Workflow:**
+  - The workflow file `.github/workflows/deploy.yml` handles build and deployment on push to the main branch.
+
+## Deployment
+
+On every push to the `main` branch, GitHub Actions will:
+
+- Install dependencies
+- Build the React app
+- Sync the build output to the specified S3 bucket
+
