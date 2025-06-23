@@ -42,3 +42,5 @@ On every push to the `main` branch, GitHub Actions will:
 - Build the React app
 - Sync the build output to the specified S3 bucket
 
+The deployed application can be accessed at:  
+[https://react-s3-wael.s3.eu-north-1.amazonaws.com/index.html](https://react-s3-wael.s3.eu-north-1.amazonaws.com/index.html)
